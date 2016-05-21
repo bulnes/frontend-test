@@ -1,14 +1,52 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-
-    <title>R7 FrontEnd Test</title>
-
-    <link rel="stylesheet" href="stylesheets/style.css" media="all">
-  </head>
-  <body>
-      <!-- let's code :D -->
-
-    <script src="javascripts/main.js"></script> 
+	<head>
+		<meta charset="UTF-8">
+		<title>R7 FrontEnd Test</title>
+		<link rel="stylesheet" href="stylesheets/style.css" media="all">
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1>A Fazenda</h1>
+				<h2>Ranking</h2>
+			</div>
+			
+			<ul id="list-of-people" class="people"></ul>
+		</div>
+		
+		<script src="javascripts/mustache.min.js"></script>
+		<script src="javascripts/xhrequest.js"></script>
+		<script src="javascripts/fazenda.js"></script>
+		<script src="javascripts/main.js"></script> 
+		<script id="people" type="text/template">
+			{{#people}}
+			<li>
+				<div class="figure">
+					<img src="{{picture}}" alt="{{name}}">
+					<span class="position">{{position}}</span>
+				</div>
+				<h3>
+					{{{name}}} 
+					<small>{{{description}}}</small>
+				</h3>
+				
+				<table>
+					<thead>
+						<tr>
+							<th>Gostam</th>
+							<th>Não gostam</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{like}}%</td>
+							<td>{{dislike}}%</td>
+						</tr>
+					</tbody>
+				</table>
+			</li>
+			{{/people}}
+		</script>
+	</body>
 </html>

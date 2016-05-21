@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import 'reset.scss';
+
+// colors
+$dark-color: #272727;
+$matte-black: #333;
+$light-color: #fff;
+$item-primary: #f2f1f1;
+$item-heading: #ba3638;
+$item-heading-contrast: #f4f3f3;
+$simple-background: #f8f7f7;
+$simple-text-color: #909090;
+
+body {
+	background-color: $dark-color;
+	font-family: 'Montserrat', 'Arial', sans-serif;
+	font-size: 16px;
+}
+
+.container {
+	margin: 50px auto 0;
+	width: 374px;
+}
+
+/* header */
+.header {
+	position: relative;
+	margin-bottom: 20px;
+	
+	h1 {
+		background-image: url("images/logo.png");
+		background-repeat: no-repeat;
+		color: $light-color;
+		height: 157px;
+		text-indent: -9999px;
+		width: 148px;
+	}
+	
+	h2 {
+		background-color: $light-color;
+		bottom: 10px;
+		color: $dark-color;
+		font-size: 28px;
+		font-weight: bold;
+		margin-left: 80px;
+		padding: 15px;
+		padding-right: 55px;
+		position: absolute;
+		right: 0;
+		text-align: right;
+		text-transform: uppercase;
+		width: 250px;
+		z-index: -99;
+	}
+}
+
+/* List */
+ul.people {
+	background-color: $light-color;
+	margin-bottom: 50px;
+	margin-left: 32px;
+	width: 342px;
+	
+	li {
+		margin: 0px;
+		padding: 10px 15px;	
+		min-height: 85px;
+		position: relative;
+		
+		&:nth-child(even) {
+			background-color: $item-primary;
+		}
+		
+		&:hover {
+			background-color: $item-heading;
+			
+			table {
+				display: block;
+				position: absolute;
+				right: -185px;
+				top: 23px;
+				width: 170px;
+			}
+			
+			h3 { color: $item-heading-contrast; }
+			small { color: #000; }
+			img { border-color: $light-color; }
+		}
+		
+		table::before {
+			border-top: 7px solid transparent;
+			border-bottom: 7px solid transparent; 
+			border-right: 7px solid $simple-background; 
+			content: " ";
+			position: absolute;
+			left: -7px;
+			top: 40%;
+		}
+	}
+	
+	.figure {
+		float: left;
+		margin: 4px 20px 0 0;
+		position: relative;
+	}
+	
+	img {
+		border: 5px solid $item-heading;
+		border-radius: 50%;
+		height: 65px;
+		width: 65px;
+	}
+	
+	.position {
+		background-color: $item-heading-contrast;
+		border: 1px solid #707070;
+		border-radius: 100%;
+		bottom: 2px;
+		color: #707070;
+		font-size: 13px;
+		font-weight: bold;
+		padding: 5px 8px;
+		position: absolute;
+		right: 1px;
+	}
+	
+	h3 {
+		color: $item-heading;
+		font-size: 18px;
+		margin: 25px 0;
+	}
+	
+	small {
+		color: $simple-text-color;
+		display: block;
+		font-size: 12px;
+		margin-top: 5px;
+	}
+	
+	table {
+		display: none;
+		
+		th {
+			background-color: $item-heading;
+			color: white;
+			font-size: 10px;
+			padding: 3px 12px;
+			text-transform: uppercase;
+			
+			&:first-child { border-radius: 5px 0 0 0; }
+			
+			&:last-child { border-radius: 0 5px 0 0; border-left: 1px solid #333; }
+		}
+		
+		td {
+			background-color: $simple-background;
+			color: $simple-text-color;
+			font-size: 22px;
+			font-weight: bold;
+			padding: 5px;
+			text-align: center;
+			
+			&:first-child { border-radius: 0 0 0 5px; }
+			
+			&:last-child { border-radius: 0 0 5px 0; border-left: 1px solid $matte-black; }
+		}
+	}
+}
